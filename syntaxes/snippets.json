@@ -44,10 +44,55 @@
         "body": "jump_l ${1:val1} ${2:val2} ${3:-break}",
         "description": "if condition true, jumps to line number given as param3 (-breaks jumps to next 'end' statement)"
     },
-    "reg":{
-        "prefix" : ["R","r"],
-        "body" : ["R0","R1","R2","R3","R4","R5","R6","R7","SP","PC"],
+    "reg0":{
+        "prefix" : ["R0","r0"],
+        "body" : "R0",
         "description": "Register"
+    },
+    "reg1":{
+        "prefix" : ["R1","r1"],
+        "body" : "R1",
+        "description": "Register"
+    },
+    "reg2":{
+        "prefix" : ["R2","r2"],
+        "body" : "R2",
+        "description": "Register"
+    },
+    "reg3":{
+        "prefix" : ["R3","r3"],
+        "body" : "R3",
+        "description": "Register"
+    },
+    "reg4":{
+        "prefix" : ["R4","r4"],
+        "body" : "R4",
+        "description": "Register"
+    },
+    "reg5":{
+        "prefix" : ["R5","r5"],
+        "body" : "R5",
+        "description": "Register"
+    },
+    "reg6":{
+        "prefix" : ["R6","r6"],
+        "body" : "R6",
+        "description": "Register"
+    },
+    "reg7":{
+        "prefix" : ["R7","r7"],
+        "body" : "R7",
+        "description": "Register"
+    },
+    "sp":{
+        "prefix": ["sp", "SP"],
+        "body": "SP",
+        "description": "Stack Pointer Register"
+    },
+    "pc":{  
+        "prefix" : ["pc", "PC"],
+        "body": "PC",
+        "description": "Program Counter Register"
     },
     "ret":{
         "prefix": "ret",
