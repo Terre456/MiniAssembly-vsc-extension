@@ -151,7 +151,7 @@
     },
     "loopi":{
         "prefix": "loopi",
-        "body": "move R1 ${1:0}\nloop\njump_ge R1 ${2:10} -break\n${3://pass}\nend",
+        "body": "move R1 ${1:0}\nloop\njump_ge R1 ${2:10} -break\n${3://pass}\nmove R1 R1 1\nend",
         "description": "a loop that iterates val times over R1"
     },
     "halt":{
