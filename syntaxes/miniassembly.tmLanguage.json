@@ -1,0 +1,100 @@
+{
+	"$schema": "https://raw.githubusercontent.com/martinring/tmlanguage/master/tmlanguage.json",
+	"name": "MiniAssembly",
+	"patterns": [
+		{
+			"include": "#comments"
+		},
+		{
+			"include": "#functions" 
+		},
+		{
+			"include": "#keywords" 
+		},
+		{
+			"include": "#variable"
+		},
+		{
+			"include": "#control"
+		},
+		{
+			"include": "#registers"
+		},
+		{
+			"include": "#special_reg"
+		},
+		{
+			"include": "#numbers"
+		},
+		{
+			"include": "#strings"
+		}
+	],
+	"repository": {
+		
+		"variable":{
+			"patterns":[{
+				"name": "variable.label.miniassembly",
+				"match": "\\$([^\\s]+)"
+			}]
+		},
+		"control":{
+			"patterns":[{
+				"name": "keyword.control.flow.miniassembly",
+				"match": "\\b(jump|jump_neq|jump_ge|jump_eq|jump_g|jump_le|jump_l|call|ret)\\b"
+			}]
+		},
+		"numbers":{
+			"patterns":[{
+				"name": "constant.numeric.miniassembly",
+				"match":"\\b\\d+\\b"
+			}]
+		},
+		"functions":{
+			"patterns":[{
+				"name":"function.miniassembly",
+				"match":"\\b(print|println|malloc|move|add|sub|mul|div|mod)\\b"
+			}]
+		},
+		"registers":{
+			"patterns":[{
+				"name" :"constant.register.miniassembly",
+				"match": "\\b(R[0-9])\\b"
+			}]
+		},
+		"special_reg":{
+			"patterns":[{
+				"name": "constant.register.special.miniassembly",
+				"match": "\\b(SP|PC)\\b"
+			}]
+		},
+
+		"keywords":{
+			"patterns": [{
+				"name": "keyword.control.miniassembly",
+				"match": "\\b(halt|loop|end|label)\\b|-break"
+			}]
+		},
+		"comments": {
+			"patterns": [
+				{	
+					"name": "comment.line.double-slash.miniassembly",
+					"begin": "//",
+					"end":"\n"
+				}
+		]
+		},
+		"strings": {
+			"name": "string.quoted.double.miniassembly",
+			"begin": "\"",
+			"end": "\"",
+			"patterns": [
+				{
+					"name": "constant.character.escape.miniassembly",
+					"match": "\\\\."
+				}
+			]
+		}
+	},
+	"scopeName": "source.miniassembly"
+}

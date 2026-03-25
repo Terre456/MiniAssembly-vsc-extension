@@ -1,0 +1,117 @@
+{
+    "print":{
+        "prefix": "print",
+        "body": "print ${1:arg1}",
+        "description": "prints inline value arg1 to console, can have more than 1 parameter: prints them seperated by \" \" ."
+    },
+    "println":{
+        "prefix": "println",
+        "body": "println ${1:arg1}",
+        "description": "prints newline value arg1 to console, can have more than 1 parameter: prints them seperated by \" \" ."
+    },
+    "jump":{
+        "prefix": "jump",
+        "body": "jump ${1:line}",
+        "description": "if condition true, jumps to line number given as param3 (-breaks jumps to next 'end' statement)"
+    },
+    "jump_eq":{
+        "prefix": "jump_eq",
+        "body": "jump_eq ${1:val1} ${2:val2} ${3:-break}",
+        "description": "if condition true, jumps to line number given as param3 (-breaks jumps to next 'end' statement)"
+    },
+    "jump_neq":{
+        "prefix": "jump_neq",
+        "body": "jump_neq ${1:val1} ${2:val2} ${3:-break}",
+        "description": "if condition true, jumps to line number given as param3 (-breaks jumps to next 'end' statement)"
+    },
+    "jump_ge":{
+        "prefix": "jump_ge",
+        "body": "jump_ge ${1:val1} ${2:val2} ${3:-break}",
+        "description": "if condition true, jumps to line number given as param3 (-breaks jumps to next 'end' statement)"
+    },
+    "jump_g":{
+        "prefix": "jump_g",
+        "body": "jump_g ${1:val1} ${2:val2} ${3:-break}",
+        "description": "if condition true, jumps to line number given as param3 (-breaks jumps to next 'end' statement)"
+    },
+    "jump_le":{
+        "prefix": "jump_le",
+        "body": "jump_le ${1:val1} ${2:val2} ${3:-break}",
+        "description": "if condition true, jumps to line number given as param3 (-breaks jumps to next 'end' statement)"
+    },
+    "jump_l":{
+        "prefix": "jump_l",
+        "body": "jump_l ${1:val1} ${2:val2} ${3:-break}",
+        "description": "if condition true, jumps to line number given as param3 (-breaks jumps to next 'end' statement)"
+    },
+    "reg":{
+        "prefix" : ["R","r"],
+        "body" : ["R0","R1","R2","R3","R4","R5","R6","R7","SP","PC"],
+        "description": "Register"
+    },
+    "ret":{
+        "prefix": "ret",
+        "body": "ret",
+        "description": "jump back to last call line stored"
+    },
+    "malloc":{
+        "prefix": "malloc",
+        "body": "malloc ${1:addr} ${2:size}",
+        "description": "allocates cells from the heap and stores reference address in arg1"
+    },
+    "add":{
+        "prefix": "add",
+        "body": "add ${1:addr} ${2:val1} ${2:val2}",
+        "description": "adds arg2 and arg3 and stores result in arg1"
+    },
+    "sub":{
+        "prefix": "sub",
+        "body": "sub ${1:addr} ${2:val1} ${2:val2}",
+        "description": "subs arg2 and arg3 and stores result in arg1"
+    },
+    "mul":{
+        "prefix": "mul",
+        "body": "mul ${1:addr} ${2:val1} ${2:val2}",
+        "description": "muls arg2 and arg3 and stores result in arg1"
+    },
+    "div":{
+        "prefix": "div",
+        "body": "div ${1:addr} ${2:val1} ${2:val2}",
+        "description": "div arg2 and arg3 and stores result in arg1"
+    },
+    "mod":{
+        "prefix": "mod",
+        "body": "mod ${1:addr} ${2:val1} ${2:val2}",
+        "description": "mods arg2 and arg3 and stores result in arg1"
+    },
+    "move":{
+        "prefix" : "move",
+        "body": "move ${1:adrr} ${2:val}",
+        "description": "changes value of arg1 to arg2"
+    },
+    "pop":{
+        "prefix": "pop",
+        "body": "pop",
+        "description": "pops last value from the stack"
+    },
+    "push":{
+        "prefix": "push",
+        "body": "push ${1:val}",
+        "description": "pushes arg1 on top of the stack, can have multiple parameters: pushes them in order"
+    },
+    "loopend":{
+        "prefix": "loop",
+        "body": "loop\n\nend",
+        "description": "loop...end, looping block"
+    },
+    "loopi":{
+        "prefix": "loopi",
+        "body": "move R1 ${1:0}\nloop\njump_ge R1 ${2:10} -break\n${3://pass}\nend",
+        "description": "a loop that iterates val times over R1"
+    },
+    "halt":{
+        "prefix":"halt",
+        "body":"halt",
+        "description": "ends the program instantly"
+    }
+}
