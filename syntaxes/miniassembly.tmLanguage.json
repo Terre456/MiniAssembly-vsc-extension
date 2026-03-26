@@ -53,7 +53,7 @@
 		"functions":{
 			"patterns":[{
 				"name":"function.miniassembly",
-				"match":"\\b(print|println|malloc|move|add|sub|mul|div|mod)\\b"
+				"match":"\\b(print|println|malloc|move|add|sub|mul|div|mod|push|pop)\\b"
 			}]
 		},
 		"registers":{
