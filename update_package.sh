@@ -15,3 +15,4 @@ new_file=miniassembly-$MAJOR.$MEDIUM.$MINOR.vsix
 echo $new_file
 vsce package
 mv miniassembly-0.0.1.vsix $new_file
+git add $new_file
